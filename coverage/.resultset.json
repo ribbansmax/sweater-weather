@@ -1,7 +1,22 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/magicmax/turing/mod3/sweater_weather/app/controllers/api/v1/forecast_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/magicmax/turing/mod3/sweater_weather/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      }
     },
-    "timestamp": 1615053167
+    "timestamp": 1615054189
   }
 }
