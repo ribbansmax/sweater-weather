@@ -1,6 +1,7 @@
 class Api::V1::ForecastController < ApplicationController
   def show
-    @lat_lon = MapQuestFacade.get_lat_lon(params[:location])
+    location = MapQuestFacade.get_lat_lon(params[:location])
+    forecast = ForecastFacade.get_forecast(location)
     render json: {}
   end
 end
