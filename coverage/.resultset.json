@@ -1,6 +1,31 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/magicmax/turing/mod3/sweater_weather/app/services/map_quest_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          2,
+          2,
+          null,
+          2,
+          null,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/magicmax/turing/mod3/sweater_weather/app/controllers/api/v1/forecast_controller.rb": {
         "lines": [
           1,
@@ -27,33 +52,8 @@
           null,
           null
         ]
-      },
-      "/Users/magicmax/turing/mod3/sweater_weather/app/services/map_quest_service.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1615057575
+    "timestamp": 1615058150
   }
 }
