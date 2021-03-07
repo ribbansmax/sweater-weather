@@ -28,4 +28,16 @@ describe "Forecast API" do
       expect(data[:error]).to eq('bad location')
     end
   end
+
+  it 'sad path, open weather is down' do
+    VCR.use_cassette('weather_down') do
+      get "/api/v1/forecast?location=denver,co"
+
+      expect(response.status).to eq(400)
+
+      data = JSON.parse(response.body, symbolize_names: true)
+
+      expect(data[:error]).to eq('open-weather is down')
+    end
+  end
 end

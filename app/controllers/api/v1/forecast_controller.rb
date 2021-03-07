@@ -9,7 +9,7 @@ class Api::V1::ForecastController < ApplicationController
         render json: ForecastSerializer.new(forecast)
       end
     rescue
-      render json: {"error" => {}}, status: 404
+      render json: {"error" => 'open-weather is down'}, status: 400
     end
   end
 end
