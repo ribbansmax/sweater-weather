@@ -17,6 +17,7 @@ class OpenWeatherApiService
       Faraday.new('http://api.openweathermap.org/data/2.5/') do |faraday|
         faraday.params['appid'] = ENV['OPEN_WEATHER_API']
         faraday.params['exclude'] = 'minutely,alerts'
+        faraday.params['units'] = 'imperial'
       end
     end
   end
