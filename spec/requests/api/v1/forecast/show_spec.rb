@@ -14,6 +14,14 @@ describe "Forecast API" do
       expect(data[:type]).to eq('forecast')
       expect(data[:attributes].keys).to eq([:current_weather, :daily_weather, :hourly_weather])
       expect(data[:attributes][:current_weather].keys).to eq([:datetime, :sunrise, :sunset, :temperature, :feels_like, :humidity, :uvi, :visibility, :conditions, :icon])
+      expect(data[:attributes][:daily_weather].length).to eq(5)
+      data[:attributes][:daily_weather].each do |day|
+        expect(day.keys).to eq([:datetime, :sunrise, :sunset, :min_temp, :max_temp, :conditions, :icon])
+      end
+      expect(data[:attributes][:hourly_weather].length).to eq(8)
+      data[:attributes][:hourly_weather].each do |hour|
+        expect(hour.keys).to eq([:datetime, :temperature, :conditions, :icon])
+      end
     end
   end
 
