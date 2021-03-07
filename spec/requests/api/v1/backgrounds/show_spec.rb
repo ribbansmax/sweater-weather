@@ -18,4 +18,14 @@ describe "Pexels API" do
       expect(data[:credit].keys).to eq([:source, :author, :author_page])
     end
   end
+
+  it 'sad path, detects no location given' do
+    get "/api/v1/backgrounds?location="
+
+    expect(response.status).to eq(400)
+
+      data = JSON.parse(response.body, symbolize_names: true)
+
+      expect(data[:error]).to eq('no location given')
+  end
 end

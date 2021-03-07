@@ -1,7 +1,7 @@
 class Api::V1::BackgroundsController < ApplicationController
   def show
     # begin
-      if params['location']
+      if params['location'] != ('' || nil)
         picture = PictureFacade.get_picture(params['location'])
         render json: ImageSerializer.new(picture)
       else
