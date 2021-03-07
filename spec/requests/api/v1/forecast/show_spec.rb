@@ -37,6 +37,18 @@ describe "Forecast API" do
     end
   end
 
+  it 'sad path, no location' do
+    VCR.use_cassette("no_location") do
+      get '/api/v1/forecast?location='
+
+      expect(response.status).to eq(400)
+
+      data = JSON.parse(response.body, symbolize_names: true)
+
+      expect(data[:error]).to eq('no location given')
+    end
+  end
+
   it 'sad path, open weather is down' do
     VCR.use_cassette('weather_down') do
       get "/api/v1/forecast?location=denver,co"
