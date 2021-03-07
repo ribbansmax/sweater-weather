@@ -24,8 +24,20 @@ describe "Pexels API" do
 
     expect(response.status).to eq(400)
 
-      data = JSON.parse(response.body, symbolize_names: true)
+    data = JSON.parse(response.body, symbolize_names: true)
 
-      expect(data[:error]).to eq('no location given')
+    expect(data[:error]).to eq('no location given')
+  end
+
+  it 'sad path, no picture matches search' do
+    VCR.use_cassette('bad_picture_search') do
+      get "/api/v1/backgrounds?location=adjashdwaqs89jkqwoiqqw09202"
+
+      expect(response.status).to eq(404)
+  
+      data = JSON.parse(response.body, symbolize_names: true)
+  
+      expect(data[:error]).to eq('no pictures match search')
+    end
   end
 end
